@@ -14,6 +14,20 @@ import theme from './config/theme';
 import configRouter from './config/router';
 import vuexStore from './vuex/store';
 
+// Import Appollo
+import { ApolloClient, createNetworkInterface } from 'apollo-client'
+import VueApollo from 'vue-apollo'
+
+// Create the apollo client
+const apolloClient = new ApolloClient({
+  networkInterface: createNetworkInterface({
+    uri: 'http://localhost:3000/graphql',
+    transportBatching: true,
+  }),
+  dataIdFromObject: r => r.id,
+  connectToDevTools: true,
+})
+
 plugins(Vue, Vuex, VueRouter);
 directives(Vue);
 theme(Vue);
@@ -29,10 +43,18 @@ sync(store, router);
 // Importando o componente raíz onde a app será renderizada.
 import App from './App'; // eslint-disable-line
 
+// Install the vue plugin
+Vue.use(VueApollo)
+
+const apolloProvider = new VueApollo({
+  defaultClient: apolloClient,
+})
+
 new Vue({ // eslint-disable-line no-new
   router,
   store,
   el: '#app',
+  apolloProvider,
   template: '<App/>',
   components: { App },
 });

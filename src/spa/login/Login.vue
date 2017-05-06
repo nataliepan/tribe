@@ -5,6 +5,23 @@
         <img src="../../assets/img/logo.png" alt="People">
       </md-card-media>
 
+ <!-- If there is one or more queries loading -->
+    <template v-if="loading > 0">
+      Loading
+    </template>
+    <!-- Actual view -->
+    <template v-else>
+  
+     <ul>
+        <!-- Post list items -->
+
+        <li v-for="post in posts.sessions" >
+          {{ post.title }} by
+          {{ post._id }} {{ post.day }}
+        </li>
+      </ul> 
+    </template>
+
       <md-card-content>
         <md-input-container :class="{'md-input-invalid': errors.has('email')}">
           <label>User</label>
@@ -49,14 +66,43 @@
 </template>
 
 <script type="text/javascript">
+import gql from 'graphql-tag';
+
+  // GraphQL query
+  const a = gql`
+    query allPosts {
+      viewer {
+        sessions {
+          day,
+          title,
+          speakers,
+          slot
+        }
+      }
+    }
+  `;
 
   export default {
     data() {
       return {
+        posts: '',
         user: '',
         cnpj: '',
         password: '',
       };
+    }, 
+    // Apollo GraphQL
+    apollo: {
+      // Local state 'posts' data will be updated
+      // by the GraphQL query result
+      posts: {
+        // GraphQL query
+        query: a,
+        // Will update the 'loading' attribute
+        // +1 when a new query is loading
+        // -1 when a query is completed
+        loadingKey: 'loading',
+      },
     },
     components: {
     },
@@ -72,7 +118,8 @@
     },
     methods: {
       login() {
-        this.$router.push({ path: '/produtos' });
+        console.log(postsQuery);
+        //this.$router.push({ path: '/produtos' });
       },
     },
   };
