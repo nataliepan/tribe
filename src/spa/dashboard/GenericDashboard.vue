@@ -358,6 +358,7 @@ li a {
 .eventPreviews{
   display: -webkit-flex;
     display: flex;
+    flex-wrap:wrap;
     margin: 0 -10px 0;
 }
 
