@@ -31,56 +31,15 @@
       </ul>  
     </nav>
     <div class="main-content">
-    <section>
-      <article>
-        <div class="event-header">
-          <span class="event-header-img"></span>
-          <span class="event-header-company">Tesla</span>
-          <span class="event-date">May 10</span>
-        </div>
-        <div class="event-hero-image">
-          <img src="../../assets/img/elon_musk.png">
-        </div>
-        <div class="event-blurb">
-          <h3>Test Drive The Newest Model 3</h3>
-          <span class="event-description">TL;DR It's pretty awesome</span>
-        </div>
-        <div class="event-article-footer">
-        </div>
-      </article>
-      <article>
-        <div class="event-header">
-          <span class="event-header-img"></span>
-          <span class="event-header-company">Tesla</span>
-          <span class="event-date">May 10</span>
-        </div>
-        <div class="event-hero-image">
-          <img src="../../assets/img/office.jpeg">
-        </div>
-        <div class="event-blurb">
-          <h3>Test Drive The Newest Model 3</h3>
-          <span class="event-description">TL;DR It's pretty awesome</span>
-        </div>
-        <div class="event-article-footer">
-        </div>
-      </article>
-      <article>
-        <div class="event-header">
-          <span class="event-header-img"></span>
-          <span class="event-header-company">Tesla</span>
-          <span class="event-date">May 10</span>
-        </div>
-        <div class="event-hero-image">
-          <img src="../../assets/img/sunset.jpeg">
-        </div>
-        <div class="event-blurb">
-          <h3>Test Drive The Newest Model 3</h3>
-          <span class="event-description">TL;DR It's pretty awesome</span>
-        </div>
-        <div class="event-article-footer">
-        </div>
-      </article>
+    <section class="main-body">
+    <div class="eventPreviews">
+    <article v-for="event in events" class="eventPreview-wrapper">
+     <EventPreview :event="event"></EventPreview>
+    </article> 
+   </div>
     </section>
+     <aside class="main-side">
+     </aside>
     <aside>
       
     </aside>
@@ -90,10 +49,63 @@
 </template>
 
 <script type="text/babel">
+import EventPreview from '../../shared-components/EventPreview';
+
+export default {
+    name: 'GenericDashBoard',
+    components: {
+      EventPreview,
+    },
+    data() {
+      return {
+        events: [{
+          name: 'Angel Hack SF',
+          date: 'May 10',
+          city: 'San Francisco',
+          state: 'California',
+          description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+          img: '/static/img/elon_musk.png',
+          starttime: '1:00PM',
+        },
+        {
+          name: 'Real Estate Business Conference',
+          date: 'May 10',
+          city: 'San Francisco',
+          state: 'California',
+          description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+          img: '/static/img/sunset.jpeg',
+          starttime: '4:00PM',
+        },
+        {
+          name: 'Shock Therapy',
+          date: 'May 10',
+          city: 'San Francisco',
+          state: 'California',
+          description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+          img: '/static/img/shock.jpg',
+          starttime: '2:30PM',
+        }]
+      };
+    }, 
+    computed: {
+      // pageName() {
+      //   return this.$route.name;
+      // },
+    },
+    methods: {
+      // toggleSidenav() {
+      //   this.$refs.sidenav.toggle();
+      // },
+    },
+  };
 
 </script>
 
 <style>
+.main-content{
+margin: 10px auto 0;
+width: 90%;
+}
  .container {
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
@@ -175,35 +187,16 @@ li a {
   color: rgb(143,143,143);
 }
 
-article {
-  margin: 0 auto;
-  width: 95%;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04); 
-  border: 1px solid rgba(0,0,0,0.09);
-  padding: 1%;
+.eventPreviews{
+  display: -webkit-flex;
+    display: flex;
+    margin: 0 -10px 0;
 }
 
-div.event-header {
-  padding: 1% 2.5%;
-}
-
-.event-hero-image {
-  width: 95%;
-  margin: 0 auto;
-}
-
-.event-hero-image img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-h3 {
-  padding: 1% 2.5%;
-}
-
-.event-description {
-  color: rgb(143,143,143);
-  padding: 1% 2.5%;
+.eventPreview-wrapper{
+  margin: 10px;
+   flex-grow: 1;
+    flex-basis: 0;
 }
 
 
