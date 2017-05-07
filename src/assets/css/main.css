@@ -1,2 +1,6 @@
 @import './typography.css';
 @import '../../../node_modules/vue-material/dist/vue-material.css';
+
+input{
+	height: 36px;
+}
