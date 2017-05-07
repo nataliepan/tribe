@@ -11,7 +11,7 @@
               <span class="plan_event_header">Create Event</span>
           </div>
           <div class="right">
-            <span class="schedule">Save<i class="fa fa-chevron-down"></i></span>
+            <span class="save">Save<i class="fa fa-chevron-down"></i></span>
             <i class="fa fa-bell-o right-header-bell" aria-hidden="true"></i>
             <i class="fa fa-ellipsis-h"></i>
             <div class="member-img-create"><img src="../../assets/img/shock.jpg" alt="Shocked face"></div>

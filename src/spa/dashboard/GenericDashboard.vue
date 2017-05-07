@@ -162,4 +162,10 @@ h3 {
 .event-description {
   color: rgb(143,143,143);
 }
+
+@media (min-width: 800px) {
+  .schedule {
+    display: inline;
+  }
+}
 </style>
