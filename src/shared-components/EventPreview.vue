@@ -59,7 +59,7 @@
 </template>
 
 <script type="text/babel">
-const pathToCats = require.context('../assets/img', true);
+const imagePath = require.context('../assets/img', true);
 
 export default {
     name: 'GenericDashboard',

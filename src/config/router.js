@@ -3,7 +3,7 @@ import Login from '../spa/login/Login';
 import Dashboard from '../spa/dashboard/Dashboard';
 import GenericDashboard from '../spa/dashboard/GenericDashboard';
 import EventCreate from '../spa/event/EventCreate';
-import EventSchedule from '../spa/event/EventSchedule';
+import EventMakeSchedule from '../spa/event/EventMakeSchedule';
 import List from '../spa/products/List';
 import NotFound from '../spa/NotFound';
 /* eslint-disable import/prefer-default-export */
@@ -43,7 +43,7 @@ export const routes = [
   },
    {
     path: '/eventmakeschedule',
-    component: EventSchedule,
+    component: EventMakeSchedule,
   },
   {
     path: '*',

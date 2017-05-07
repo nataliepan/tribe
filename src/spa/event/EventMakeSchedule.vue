@@ -1,22 +1,7 @@
 <template lang="html">
 <div class="create_schedule_wrapper">
 <div class="container">
-        <header class="create-event-header">
-          <div class="left">
-            <span class="logo-image">
-                <a href="left-logo">
-                    <img src="tee.jpg" alt="letter T">
-                </a>
-              </span>
-              <span class="plan_event_header">Create Event</span>
-          </div>
-          <div class="right">
-            <span class="save">Save<i class="fa fa-chevron-down"></i></span>
-            <i class="fa fa-bell-o right-header-bell" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-h"></i>
-            <div class="member-img-create"><img src="shock.jpg" alt="Shocked face"></div>
-          </div>
-        </header>
+        <HeaderBar :page="page"></HeaderBar>
 
         <section class="add-sessions-venue-type">
             <div class="add-session-button">
@@ -34,6 +19,31 @@
 </template>
 
 <script type="text/babel">
+import HeaderBar from '../../shared-components/HeaderBar';
+
+export default {
+    name: 'EventMakeSchedule',
+    data() {
+      return {
+        page: {
+          title: 'Scheduling'
+        }
+      };
+    }, 
+   components: {
+      HeaderBar,
+    },
+    computed: {
+      // pageName() {
+      //   return this.$route.name;
+      // },
+    },
+    methods: {
+      // toggleSidenav() {
+      //   this.$refs.sidenav.toggle();
+      // },
+    },
+  };
 
 </script>
 

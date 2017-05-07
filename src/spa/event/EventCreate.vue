@@ -1,22 +1,7 @@
 <template lang="html">
 <div class="create_event_wrapper">
 <div class="container">
-        <header class="create-event-header">
-          <div class="left">
-            <span class="logo-image">
-                <a href="left-logo">
-                    <img src="../../assets/img/tee.jpg" alt="letter T">
-                </a>
-              </span>
-              <span class="plan_event_header">Create Event</span>
-          </div>
-          <div class="right">
-            <span class="save">Save<i class="fa fa-chevron-down"></i></span>
-            <i class="fa fa-bell-o right-header-bell" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-h"></i>
-            <div class="member-img-create"><img src="../../assets/img/shock.jpg" alt="Shocked face"></div>
-          </div>
-        </header>
+       <HeaderBar :page="page"></HeaderBar>
 
         <section class="event-name-details">
             <input type="text" name="event-name" id="event-name" placeholder="Event Name">
@@ -60,7 +45,7 @@
                 <div class="plan-event-finish-text">Head to the next step!</div>
             </div>
             <div class="schedule-btn">
-                <button>Create Schedule</button>
+                <button @click.stop="createevent">Create Schedule</button>
             </div>
         </section>
     </div>
@@ -68,7 +53,74 @@
 </template>
 
 <script type="text/babel">
+import HeaderBar from '../../shared-components/HeaderBar';
 
+// import gql from 'graphql-tag';
+
+//   // GraphQL query
+//   const postsQuery = gql`
+//     query allPosts {
+//       viewer {
+//         sessions {
+//           day,
+//           title,
+//           speakers,
+//           slot
+//         }
+//       }
+//     }
+//   `;
+
+  export default {
+    created(){
+   
+          
+    },
+    components: {
+      HeaderBar,
+    },
+    data() {
+      return {
+        page: {
+          title: 'Create Event'
+        }
+        // viewer: '',
+        // loading: 0,
+        // user: '',
+        // cnpj: '',
+        // password: '',
+      };
+    }, 
+    // // Apollo GraphQL
+    // apollo: {
+    //   // Local state 'posts' data will be updated
+    //   // by the GraphQL query result
+    //   viewer: {
+    //     // GraphQL query
+    //     query: postsQuery,
+    //     // Will update the 'loading' attribute
+    //     // +1 when a new query is loading
+    //     // -1 when a query is completed
+    //     loadingKey: 'loading',
+    //   },
+    // },
+    computed: {
+      // cnpjError() {
+      //   // Exemplo de computed properties
+      //   return (this.errors) ? this.errors.first('cnpj') : '';
+      // },
+      // emailError() {
+      //   // Exemplo de computed properties
+      //   return (this.errors) ? this.errors.first('email') : '';
+      // },
+    },
+    methods: {
+      createevent() {
+        //this.$router.push({ path: '/produtos' });
+        this.$router.push({ path: '/eventmakeschedule' });
+      },
+    },
+  };
 </script>
 
 <style>
@@ -76,29 +128,7 @@
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
 }
-span.plan_event_header {
-  margin-left: 20px;
-  font-size: 21px;
-}
 
-i.fa-chevron-down {
-  margin-left: 10px;
-}
-
-div.member-img-create {
-  width: 99px;
-  height: 99px;
-}
-
-div.member-img-create img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 50%;
-}
-
-header.create-event-header {
-  border-bottom: 1px solid #D8D8D8;
-}
 
 section.event-name-details,
 section.event-time-location {

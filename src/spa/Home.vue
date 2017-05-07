@@ -19,6 +19,9 @@
   import Sidebar from '../shared-components/Sidebar';
   import Toolbar from '../shared-components/Toolbar';
 
+  const imagePath = require.context('../assets/img', true);
+
+
   export default {
     name: 'Home',
     components: {

@@ -1,7 +1,8 @@
 <template lang="html">
 <div class="generic_dashboard_wrapper">
 <div class="container">
-    <header>
+    <HeaderBar :page="page"></HeaderBar>
+   <!--  <header>
       <div class="left">
         <a href="left-logo">
           <span class="logo-image">
@@ -15,7 +16,7 @@
         <i class="fa fa-bell-o right-header" aria-hidden="true"></i>
         <span class="member-img-main right-header"></span>
       </div>
-    </header>
+    </header> -->
     <nav>
       <ul>
         <li><a href="/for-you">For You</a></li>
@@ -50,14 +51,19 @@
 
 <script type="text/babel">
 import EventPreview from '../../shared-components/EventPreview';
+import HeaderBar from '../../shared-components/HeaderBar';
 
 export default {
     name: 'GenericDashBoard',
     components: {
       EventPreview,
+      HeaderBar
     },
     data() {
       return {
+        page:{
+          title:'Schedule An Event'
+        },
         events: [{
           name: 'Angel Hack SF',
           date: 'May 10',
