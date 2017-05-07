@@ -14,8 +14,8 @@
           </el-popover>
 
 
-            <input v-popover:popoverText type="text" name="event-name" id="event-name" placeholder="Event Name">
-            <textarea name="event-details" id="event-details" cols="50" rows="10" placeholder="Event details..."></textarea>
+            <input v-popover:popoverText type="text" name="event-name" id="event-name" placeholder="Event Name" v-model="name">
+            <textarea name="event-details" id="event-details" cols="50" rows="10" placeholder="Event details..." v-model="description"></textarea>
         </section>
 
         <section class="event-time-location">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="end">
                         <label for="start-time">End Date</label>
-                        <input type="time" name="end-time" id="end-time">
+                        <input type="time" name="end-time" id="end-time" >
                     </div>
                     <div class="all-day-checkbox">
                         <label for="all-day-checkbox">All Day</label>
@@ -52,7 +52,7 @@
                 </div> -->
                 <div class="event-location event-time-section">
                     <label class="create-event-label" for="event-location">Location Address</label>
-                    <input type="text" name="event-location" id="event-location">
+                    <input type="text" name="event-location" id="event-location" v-model="addressLine1">
                 </div>
                 <div class="event-tags event-time-section">
                     <label  class="create-event-label" for="event-tags">Tags (Separate by comma)</label>
@@ -97,20 +97,32 @@ import HeaderBar from '../../shared-components/HeaderBar';
       HeaderBar,
     },
     data() {
+
       return {
         page: {
           title: 'Create Event'
         },
         dateRange:{
 
-        }
-        // viewer: '',
-        // loading: 0,
-        // user: '',
-        // cnpj: '',
-        // password: '',
+        },
+        name : '',
+        description : '',
+        //startDate : '',
+        // endDate: '',
+           sessions : [],
+            tags :[],
+             addressLine1 :'',
+              city : '',
+               state : ''
       };
     },
+
+
+
+
+
+
+
     // // Apollo GraphQL
     // apollo: {
     //   // Local state 'posts' data will be updated
@@ -140,34 +152,16 @@ import HeaderBar from '../../shared-components/HeaderBar';
          // POST /someUrl
         var data = {
 
-        name : 'Registration and French Breakfast',
-         startDate : '7 may 2017',
-          endDate: '7 may 2017',
-           sessions : [],
-            tags :[],
-             addressLine1 :'44 tehama blvd ',
-              city : 'Sanfrancisco',
-               state : 'California'
+        name : this.name,
+         dateRange: this.dateRange,
+         description : this.description,
+           sessions : this.sessions,
+            tags :this.tags,
+             addressLine1 :this.addressLine1,
+              city : this.city,
+               state : this.state
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

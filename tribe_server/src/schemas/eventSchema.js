@@ -16,10 +16,12 @@ export const userType = new GraphQLObjectType({
 	fields: () => ({
 		_id: { type: new GraphQLNonNull(GraphQLString) },
 		name: { type: new GraphQLNonNull(GraphQLString) },
-		startDate: { type: new GraphQLNonNull(GraphQLString) },
-		endDate: { type: new GraphQLList(GraphQLString) },
+		description:{ type: new GraphQLNonNull(GraphQLString) },
+		//startDate: { type: new GraphQLNonNull(GraphQLString) },
+		//endDate: { type: new GraphQLNonNull(GraphQLString) },
+		dateRange:{ type: new GraphQLList(GraphQLString) },
 		sessions: { type: new GraphQLList(GraphQLString) },
-		tags: { type: new GraphQLList(GraphQLString) },
+		tags: { type: new GraphQLNonNull(GraphQLString) },
 		addressLine1: { type: new GraphQLNonNull(GraphQLString) },
 		city: { type: new GraphQLNonNull(GraphQLString) },
     state: { type: new GraphQLNonNull(GraphQLString) }
