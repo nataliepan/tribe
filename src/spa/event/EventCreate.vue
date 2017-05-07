@@ -72,6 +72,10 @@
 </script>
 
 <style>
+.container {
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+}
 span.plan_event_header {
   margin-left: 20px;
   font-size: 21px;

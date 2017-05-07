@@ -5,12 +5,12 @@
       <div class="left">
         <a href="left-logo">
           <span class="logo-image">
-            <img src="tee.jpg" alt="letter T">
+            <img src="../../assets/img/tee.jpg" alt="letter T">
           </span>
         </a>
       </div>
       <div class="right">
-        <a href="#" target="_blank"><span class="schedule">Schedule An Event</span></a>
+        <a href="create_event.html" target="_blank" class="right-header"><span class="schedule">Schedule An Event</span></a>
         <i class="fa fa-search right-header" aria-hidden="true"></i>
         <i class="fa fa-bell-o right-header" aria-hidden="true"></i>
         <span class="member-img-main right-header"></span>
@@ -39,18 +39,53 @@
           <span class="event-date">May 10</span>
         </div>
         <div class="event-hero-image">
-          <img src="elon_musk.png">
+          <img src="../../assets/img/elon_musk.png">
         </div>
-        <h3>Test Drive The Newest Model 3</h3>
-        <span class="event-description">TL;DR It's pretty awesome</span>
-
+        <div class="event-blurb">
+          <h3>Test Drive The Newest Model 3</h3>
+          <span class="event-description">TL;DR It's pretty awesome</span>
+        </div>
+        <div class="event-article-footer">
+        </div>
+      </article>
+      <article>
+        <div class="event-header">
+          <span class="event-header-img"></span>
+          <span class="event-header-company">Tesla</span>
+          <span class="event-date">May 10</span>
+        </div>
+        <div class="event-hero-image">
+          <img src="../../assets/img/office.jpeg">
+        </div>
+        <div class="event-blurb">
+          <h3>Test Drive The Newest Model 3</h3>
+          <span class="event-description">TL;DR It's pretty awesome</span>
+        </div>
+        <div class="event-article-footer">
+        </div>
+      </article>
+      <article>
+        <div class="event-header">
+          <span class="event-header-img"></span>
+          <span class="event-header-company">Tesla</span>
+          <span class="event-date">May 10</span>
+        </div>
+        <div class="event-hero-image">
+          <img src="../../assets/img/sunset.jpeg">
+        </div>
+        <div class="event-blurb">
+          <h3>Test Drive The Newest Model 3</h3>
+          <span class="event-description">TL;DR It's pretty awesome</span>
+        </div>
+        <div class="event-article-footer">
+        </div>
       </article>
     </section>
     <aside>
       
     </aside>
     </div>
-  </div>   
+  </div>
 </div>
 </template>
 
@@ -59,7 +94,7 @@
 </script>
 
 <style>
-  .container {
+ .container {
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
 }
@@ -97,9 +132,8 @@ span.logo-image {
 }
 
 .right-header {
-  padding-left: 1%;
+  margin: 10px;
 }
-
 .schedule {
   cursor: pointer;
   color: #4990E2;
@@ -146,10 +180,15 @@ article {
   width: 95%;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04); 
   border: 1px solid rgba(0,0,0,0.09);
+  padding: 1%;
+}
+
+div.event-header {
+  padding: 1% 2.5%;
 }
 
 .event-hero-image {
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -159,13 +198,14 @@ article {
 }
 
 h3 {
-  margin: 5px 0;
-  padding: 0;
+  padding: 1% 2.5%;
 }
 
 .event-description {
   color: rgb(143,143,143);
+  padding: 1% 2.5%;
 }
+
 
 @media (min-width: 800px) {
   .schedule {
