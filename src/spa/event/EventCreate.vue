@@ -73,8 +73,8 @@ import HeaderBar from '../../shared-components/HeaderBar';
 
   export default {
     created(){
-   
-          
+
+
     },
     components: {
       HeaderBar,
@@ -90,7 +90,7 @@ import HeaderBar from '../../shared-components/HeaderBar';
         // cnpj: '',
         // password: '',
       };
-    }, 
+    },
     // // Apollo GraphQL
     // apollo: {
     //   // Local state 'posts' data will be updated
@@ -118,10 +118,19 @@ import HeaderBar from '../../shared-components/HeaderBar';
       createevent() {
         //this.$router.push({ path: '/produtos' });
          // POST /someUrl
-        const data = {
+        var data = {
+
+        name : 'Registration and French Breakfast',
+         startDate : '7 may 2017',
+          endDate: '7 may 2017',
+           sessions : [],
+            tags :[],
+             addressLine1 :'44 tehama blvd ',
+              city : 'Sanfrancisco',
+               state : 'California'
 
         }
-        this.$http.post('http://localhost:3000/test', data).then(response => {
+        this.$http.post('http://localhost:3000/insertEvent', data).then(response => {
 
          // get status
           response.status;
@@ -139,7 +148,7 @@ import HeaderBar from '../../shared-components/HeaderBar';
        }, response => {
           // error callback
         });
-        
+
       },
     },
   };

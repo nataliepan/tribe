@@ -7,7 +7,7 @@ import {
 	GraphQLObjectType,
 } from 'graphql';
 
-import User from '../models/event';
+import Event from '../models/event';
 
 const viewer = {};
 

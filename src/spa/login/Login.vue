@@ -11,7 +11,7 @@
     </template>
     <!-- Actual view -->
     <template v-else>
-  
+
      <ul>
         <!-- Post list items -->
 
@@ -19,7 +19,7 @@
           {{ post.title }} by
           {{ post._id }} {{ post.day }}
         </li>
-      </ul> 
+      </ul>
     </template>
 
       <md-card-content>
@@ -65,8 +65,10 @@
   </div>
 </template>
 
+
 <script type="text/javascript">
 import gql from 'graphql-tag';
+
 
   // GraphQL query
   const postsQuery = gql`
@@ -84,8 +86,8 @@ import gql from 'graphql-tag';
 
   export default {
     created(){
-   
-          
+
+
     },
     data() {
       return {
@@ -95,7 +97,7 @@ import gql from 'graphql-tag';
         cnpj: '',
         password: '',
       };
-    }, 
+    },
     // Apollo GraphQL
     apollo: {
       // Local state 'posts' data will be updated
@@ -110,7 +112,7 @@ import gql from 'graphql-tag';
       },
     },
     components: {
-      
+
     },
     computed: {
       cnpjError() {
@@ -124,8 +126,14 @@ import gql from 'graphql-tag';
     },
     methods: {
       login() {
+
+
+
+
+
+
         //this.$router.push({ path: '/produtos' });
-        this.$router.push({ path: '/dashboard' });
+      // this.$router.push({ path: '/dashboard' });
       },
     },
   };

@@ -2,12 +2,18 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import fs from 'fs';
 import graphqlHTTP from 'express-graphql';
-import graphqlSchema from './src/schemas/sessionSchema';
+import graphqlSessionSchema from './src/schemas/sessionSchema';
 import graphqlUserSchema from './src/schemas/userSchema';
 import graphqlEventSchema from './src/schemas/eventSchema';
 import graphqlPersonSchema from './src/schemas/personSchema';
 
 import mongoose from 'mongoose';
+import User from './src/models/person';
+import Event from './src/models/event';
+
+
+
+
 import { graphql } from 'graphql';
 import { introspectionQuery } from 'graphql/utilities';
 import  cors  from 'cors';
@@ -31,7 +37,7 @@ app.use(bodyParser.json({ type: '*/*' }));
 
 (async() => {
 	try {
-		const schema = graphqlSchema(); // the default session schema
+		const sessionSchema = graphqlSessionSchema(); // the default session schema
 		const userSchema = graphqlUserSchema(); // the custom user schema
     const eventSchema = graphqlEventSchema(); // the custom event schema
     const personSchema = graphqlPersonSchema();// the custom person schema
@@ -39,9 +45,10 @@ app.use(bodyParser.json({ type: '*/*' }));
 		await mongoose.connect('mongodb://ajay:ajay@ds133271.mlab.com:33271/tribe_sfo');
 		console.log('connected');
 
-        app.use(cors(corsOptions));
-		app.use('/graphqlSessions', graphqlHTTP(req => ({
-			schema,
+  app.use(cors(corsOptions));
+
+    app.use('/graphqlSessions', graphqlHTTP(req => ({
+			schema : sessionSchema,
 			graphiql: true
 		})));
 
@@ -62,9 +69,18 @@ app.use(bodyParser.json({ type: '*/*' }));
     	graphiql: true
     })));
 
-    app.post('/test', function(req,res){
+    app.post('/insertEvent', function(req,res){
 
      console.log(req.body);
+
+     // Creating one user.
+    var toSave = new Event (req.body);
+
+    // Saving it to the database.
+  toSave.save(function (err) {if (err) console.log ('Error on save!')});
+
+
+
 
      res.send('thank you');
 
@@ -72,7 +88,7 @@ app.use(bodyParser.json({ type: '*/*' }));
 
 
 
-		const jsonSchema = await graphql(schema, introspectionQuery); // done to create  schema json file for reference
+		const jsonSchema = await graphql(sessionSchema, introspectionQuery); // done to create  schema json file for reference
 		await fs.writeFile('src/data/schema.json', JSON.stringify(jsonSchema, null, 2), err => {
 			if (err) throw err;
 

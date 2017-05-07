@@ -7,7 +7,7 @@ import {
 	GraphQLObjectType,
 } from 'graphql';
 
-import User from '../models/person';
+import Person from '../models/person';
 
 const viewer = {};
 
