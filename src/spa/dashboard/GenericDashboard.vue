@@ -10,10 +10,10 @@
         </a>
       </div>
       <div class="right">
-        <a href="create_event.html" target="_blank"><span class="schedule">Schedule An Event</span></a>
+        <a href="#" target="_blank"><span class="schedule">Schedule An Event</span></a>
         <i class="fa fa-search right-header" aria-hidden="true"></i>
         <i class="fa fa-bell-o right-header" aria-hidden="true"></i>
-        <span class="member-img-main"></span>
+        <span class="member-img-main right-header"></span>
       </div>
     </header>
     <nav>
@@ -94,6 +94,10 @@ span.logo-image {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.right-header {
+  padding-left: 1%;
 }
 
 .schedule {
