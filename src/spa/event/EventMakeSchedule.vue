@@ -3,6 +3,7 @@
 <div class="container">
         <HeaderBar :page="page"></HeaderBar>
 
+<div class="flex">
         <section class="add-sessions-venue-type">
             <div class="add-session-button add-sessions-venue-type-section">
                 <button class="add-session">Add Session</button>
@@ -36,7 +37,8 @@
 
 
         <EventSchedule></EventSchedule>
-
+</div>
+<EventSessionEdit></EventSessionEdit>
     </div>
 </div>
 </template>
@@ -44,6 +46,7 @@
 <script type="text/babel">
 import HeaderBar from '../../shared-components/HeaderBar';
 import EventSchedule from './EventSchedule';
+import EventSessionEdit from './EventSessionEdit';
 
 export default {
     name: 'EventMakeSchedule',
@@ -57,6 +60,7 @@ export default {
    components: {
       HeaderBar, 
       EventSchedule,
+      EventSessionEdit
     },
     computed: {
       // pageName() {
@@ -77,7 +81,9 @@ export default {
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
 }
-
+.flex{
+  display: flex;
+}
 
 .add-sessions-venue-type-section {
   margin: 80px;
