@@ -124,7 +124,8 @@ import gql from 'graphql-tag';
     },
     methods: {
       login() {
-        this.$router.push({ path: '/produtos' });
+        //this.$router.push({ path: '/produtos' });
+        this.$router.push({ path: '/dashboard' });
       },
     },
   };
