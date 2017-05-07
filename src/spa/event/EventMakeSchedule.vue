@@ -14,12 +14,16 @@
             </div>
         </section>
 
+
+        <EventSchedule></EventSchedule>
+
     </div>
 </div>
 </template>
 
 <script type="text/babel">
 import HeaderBar from '../../shared-components/HeaderBar';
+import EventSchedule from './EventSchedule';
 
 export default {
     name: 'EventMakeSchedule',
@@ -31,7 +35,8 @@ export default {
       };
     }, 
    components: {
-      HeaderBar,
+      HeaderBar, 
+      EventSchedule,
     },
     computed: {
       // pageName() {
