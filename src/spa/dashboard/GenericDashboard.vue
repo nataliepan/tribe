@@ -35,7 +35,7 @@
     <section class="main-body">
     <div class="eventPreviews">
 
-    <article v-for="event in viewer.sessions" class="eventPreview-wrapper">
+    <article v-for="event in events" class="eventPreview-wrapper">
      <EventPreview :event="event"></EventPreview>
     </article>
    </div>
@@ -124,7 +124,107 @@ export default {
           description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
           img: '/static/img/shock.jpg',
           starttime: '2:30PM',
-    }]
+
+
+    }, {
+      name: 'Road Trip',
+      date: 'May 12',
+      city: 'San Francisco',
+      state: 'California',
+      description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+      img: '/static/img/1.png',
+      starttime: '5:30PM',
+
+
+},
+{
+  name: 'Anger Management',
+  date: 'May 12',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/2.jpg',
+  starttime: '8:30PM',
+
+
+},
+
+{
+  name: 'Know how to Dress Your Man ',
+  date: 'May 14',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/3.jpg',
+  starttime: '2:30PM',
+
+
+},
+{
+  name: 'Becoma a poker expert ',
+  date: 'May 17',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/4.jpg',
+  starttime: '12:30PM',
+
+
+},
+{
+  name: 'Neighbor Hood Social ',
+  date: 'May 15',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/5.png',
+  starttime: '2:30PM',
+
+
+},
+{
+  name: 'Chocolate Foundation ',
+  date: 'May 14',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/6.png',
+  starttime: '5:30PM',
+
+
+},
+
+{
+  name: 'Riot Club',
+  date: 'May 14',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/7.png',
+  starttime: '2:30PM',
+
+
+},
+{
+  name: 'Coachella ',
+  date: 'May 11',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/8.png',
+  starttime: '2:30PM',
+
+
+}
+
+
+
+
+
+
+
+
+    ]
 
 
 
