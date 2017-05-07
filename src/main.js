@@ -15,18 +15,30 @@ import configRouter from './config/router';
 import vuexStore from './vuex/store';
 
 // Import Appollo
-import { ApolloClient, createNetworkInterface } from 'apollo-client'
+import ApolloClient, { createNetworkInterface, addTypename } from 'apollo-client';
 import VueApollo from 'vue-apollo'
 
 // Create the apollo client
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
+  //  uri: 'http://ec2-52-35-142-66.us-west-2.compute.amazonaws.com:3000/graphql',
     uri: 'http://localhost:3000/graphql',
     transportBatching: true,
   }),
+  queryTransformer: addTypename,
   dataIdFromObject: r => r.id,
-  connectToDevTools: true,
-})
+});
+
+// // Create the apollo client
+// const apolloClient = new ApolloClient({
+//   networkInterface: createNetworkInterface({
+//   	  uri: 'http://ec2-52-35-142-66.us-west-2.compute.amazonaws.com:3000/graphql',
+//   //  uri: 'http://localhost:3000/graphql',
+//     transportBatching: true,
+//   }),
+//   dataIdFromObject: r => r.id,
+//   connectToDevTools: true,
+// })
 
 plugins(Vue, Vuex, VueRouter);
 directives(Vue);

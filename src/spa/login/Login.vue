@@ -15,7 +15,7 @@
      <ul>
         <!-- Post list items -->
 
-        <li v-for="post in posts.sessions" >
+        <li v-for="post in viewer.sessions" >
           {{ post.title }} by
           {{ post._id }} {{ post.day }}
         </li>
@@ -69,7 +69,7 @@
 import gql from 'graphql-tag';
 
   // GraphQL query
-  const a = gql`
+  const postsQuery = gql`
     query allPosts {
       viewer {
         sessions {
@@ -83,9 +83,14 @@ import gql from 'graphql-tag';
   `;
 
   export default {
+    created(){
+   
+          
+    },
     data() {
       return {
-        posts: '',
+        viewer: '',
+        loading: 0,
         user: '',
         cnpj: '',
         password: '',
@@ -95,9 +100,9 @@ import gql from 'graphql-tag';
     apollo: {
       // Local state 'posts' data will be updated
       // by the GraphQL query result
-      posts: {
+      viewer: {
         // GraphQL query
-        query: a,
+        query: postsQuery,
         // Will update the 'loading' attribute
         // +1 when a new query is loading
         // -1 when a query is completed
@@ -105,6 +110,7 @@ import gql from 'graphql-tag';
       },
     },
     components: {
+      
     },
     computed: {
       cnpjError() {
@@ -118,8 +124,7 @@ import gql from 'graphql-tag';
     },
     methods: {
       login() {
-        console.log(postsQuery);
-        //this.$router.push({ path: '/produtos' });
+        this.$router.push({ path: '/produtos' });
       },
     },
   };
