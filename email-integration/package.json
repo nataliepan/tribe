@@ -1,0 +1,21 @@
+{
+  "name": "emailServerapp",
+  "version": "0.0.1",
+  "description": "What am I about?",
+  "main": "emailServer.js",
+  "scripts": {
+    "start": "node emailServer.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+  },
+  "engines": {
+    "node": "6.10.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ]
+}

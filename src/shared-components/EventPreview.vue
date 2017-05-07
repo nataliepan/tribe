@@ -73,7 +73,9 @@
 </template>
 
 <script type="text/babel">
+
 const imagePath = require.context('../assets/img', true);
+
 
 export default {
     name: 'GenericDashboard',
@@ -88,8 +90,9 @@ export default {
     // },
     methods: {
       subscribe() {
-        console.log('here');
-      },
+
+
+       },
     },
 };
 

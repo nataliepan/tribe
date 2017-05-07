@@ -18,8 +18,6 @@ import vuexStore from './vuex/store';
 import ApolloClient, { createNetworkInterface, addTypename } from 'apollo-client';
 import VueApollo from 'vue-apollo'
 
-import { focus } from 'vue-focus';
-
 // Create the apollo client
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({

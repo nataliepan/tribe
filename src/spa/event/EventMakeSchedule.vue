@@ -3,20 +3,42 @@
 <div class="container">
         <HeaderBar :page="page"></HeaderBar>
 
+<div class="flex">
         <section class="add-sessions-venue-type">
-            <div class="add-session-button">
+            <div class="add-session-button add-sessions-venue-type-section">
                 <button class="add-session">Add Session</button>
             </div>
-            <div class="event-dates">
+            <div class="event-dates add-sessions-venue-type-section">
                 <span class="event-dates-title">Event Dates</span>
                 <i class="fa fa-calendar-o"></i>
-                <span class="event-dates"></span>
+                <span class="event-date">May 5-7, 2017</span>
+            </div>
+            <div class="add-sessions-venue-type-section">
+                <span class="venue-title">Venues</span>
+                <i class="fa fa-plus"></i>
+                <ul class="venue-list">
+                    <li class="venue">Galvanize</li>
+                    <li class="venue">Yelp</li>
+                    <li class="venue">Pinterest</li>
+                </ul>
+            </div>
+            <div class="add-sessions-venue-type-section">
+                <span class="session-type-title">Session Type</span>
+                <i class="fa fa-plus"></i>
+                <ul class="session-type-list">
+                    <li class="session-type"><span>Keynote</span></li>
+                    <li class="session-type"><span>Networking</span></li>
+                    <li class="session-type"><span>Marketing Panel</span></li>
+                    <li class="session-type"><span>Technology Panel</span></li>
+                    <li class="session-type"><span>Workshop</span></li>
+                </ul>
             </div>
         </section>
 
 
         <EventSchedule></EventSchedule>
-
+</div>
+<EventSessionEdit></EventSessionEdit>
     </div>
 </div>
 </template>
@@ -24,6 +46,7 @@
 <script type="text/babel">
 import HeaderBar from '../../shared-components/HeaderBar';
 import EventSchedule from './EventSchedule';
+import EventSessionEdit from './EventSessionEdit';
 
 export default {
     name: 'EventMakeSchedule',
@@ -37,6 +60,7 @@ export default {
    components: {
       HeaderBar, 
       EventSchedule,
+      EventSessionEdit
     },
     computed: {
       // pageName() {
@@ -53,73 +77,88 @@ export default {
 </script>
 
 <style>
-  .container {
+ .container {
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
 }
-
-header {
+.flex{
   display: flex;
-  margin: 10px auto 0;
-  width: 90%;
-  height: 10%;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgb(243,243,243);
 }
 
-a {
-  text-decoration: none;
-  color: black;
+.add-sessions-venue-type-section {
+  margin: 80px;
 }
 
-.logo-image {
-  display: inline-block;
-  height: 100%;
+.add-session-button {
+  margin-bottom: 50px;
 }
 
-.left {
-  justify-content: flex-start;
-  display: flex;
-  align-items: center;
-}
-
-.right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.right-header {
-  margin: 10px;
-}
-.schedule {
-  cursor: pointer;
-  color: #4990E2;
-  display: none;
+.add-session {
   font-size: 21px;
-}
-
-.right-header-bell {
-  margin: 0 10px;
-}
-
-.right-header,
-.event-header-img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #4990E2;
-}
-
-.add-sessions-venue-type {
-  max-width: 35%;
+  width: 200px;
+  height: 50px;
   border: 1px solid black;
   border-radius: 100px;
 }
 
-.add-session {
+.event-dates-title {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 1.5%;
+}
 
+.event-date {
+  margin-left: 1.5%;
+  font-size: 21px;
+}
+
+.venue-title,
+.session-type-title {
+  font-size: 30px;
+  margin-right: 1%;
+}
+
+.fa-plus {
+  cursor: pointer;
+}
+
+.venue-list,
+.session-type-list {
+  padding-left: 3%;
+  margin-top: 1.5%;
+}
+
+.venue,
+.session-type {
+  padding: 0.75%;
+}
+
+.session-type-list {
+  list-style-type: disc;
+}
+
+.session-type:first-child {
+  color: #7ED321;
+}
+
+.session-type:nth-child(2) {
+  color: #4990E2;
+}
+
+.session-type:nth-child(3) {
+  color: #D0011B;
+}
+
+.session-type:nth-child(4) {
+  color: #BD0FE1;
+}
+
+.session-type:nth-child(5) {
+  color: #F6A623;
+}
+
+.session-type span {
+  color: black;
 }
 
 </style>
