@@ -187,6 +187,11 @@ div.plan-event-finish-text {
   background-color: white;
   font-size: 21px;
   color: #9B9B9B;
+}
 
+@media (min-width: 800px) {
+  .save {
+    display: inline;
+  }
 }
 </style>
