@@ -12,7 +12,7 @@ app.post("/testWebhook", function(request, response){
   console.log("WEBHOOK shall be happy")
 });
 
-// listen for requests :)
+// listen for requests
 // var listener = app.listen(process.env.PORT, function () {
 //   console.log('Your app is listening on port ' + listener.address().port);
 // });
