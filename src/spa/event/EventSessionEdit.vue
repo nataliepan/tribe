@@ -59,6 +59,11 @@
                 </ul>
             </div>
 
+            <div class="new-sessions-add-people-section">
+                <span class="add-people-title">People</span>
+                <i class="fa fa-plus"></i>
+            </div>
+
             <div class="new-session-btn-div">
                 <button class="new-session-btn">Create Session</button>
             </div>
@@ -157,6 +162,14 @@
   height: 50px;
   border: 1px solid black;
   border-radius: 100px;
+}
+
+.fa-plus {
+  cursor: pointer;
+}
+
+.new-sessions-add-people-section {
+    margin-top: 20px;
 }
   
 </style>
