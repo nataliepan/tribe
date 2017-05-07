@@ -29,20 +29,20 @@
         <li><a href="/active">Active</a></li>
         <li><a href="/bookmarks">Bookmarks</a></li>
         <li><a href="/More">More</a></li>
-      </ul>  
+      </ul>
     </nav>
     <div class="main-content">
     <section class="main-body">
     <div class="eventPreviews">
     <article v-for="event in events" class="eventPreview-wrapper">
      <EventPreview :event="event"></EventPreview>
-    </article> 
+    </article>
    </div>
     </section>
      <aside class="main-side">
      </aside>
     <aside>
-      
+
     </aside>
     </div>
   </div>
@@ -60,6 +60,7 @@ export default {
       HeaderBar
     },
     data() {
+
       return {
         page:{
           title:'Schedule An Event',
@@ -93,7 +94,7 @@ export default {
           starttime: '2:30PM',
         }]
       };
-    }, 
+    },
     computed: {
       // pageName() {
       //   return this.$route.name;
