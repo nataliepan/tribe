@@ -92,9 +92,6 @@ export default {
         ]
       };
     }, 
-   components: {
-      EventSchedule,
-    },
     computed: {
       // pageName() {
       //   return this.$route.name;
