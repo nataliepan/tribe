@@ -62,7 +62,8 @@ export default {
     data() {
       return {
         page:{
-          title:'Schedule An Event'
+          title:'Schedule An Event',
+          createEventButton: true,
         },
         events: [{
           name: 'Angel Hack SF',

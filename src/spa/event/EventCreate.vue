@@ -51,7 +51,7 @@
     </div>
 </div>
 </template>
-
+<script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>
 <script type="text/babel">
 import HeaderBar from '../../shared-components/HeaderBar';
 
@@ -117,7 +117,29 @@ import HeaderBar from '../../shared-components/HeaderBar';
     methods: {
       createevent() {
         //this.$router.push({ path: '/produtos' });
-        this.$router.push({ path: '/eventmakeschedule' });
+         // POST /someUrl
+        const data = {
+
+        }
+        this.$http.post('http://localhost:3000/test', data).then(response => {
+
+         // get status
+          response.status;
+
+         // get status text
+          response.statusText;
+
+         // get 'Expires' header
+          response.headers.get('Expires');
+
+         // get body data
+          this.someData = response.body;
+
+          this.$router.push({ path: '/eventmakeschedule' });
+       }, response => {
+          // error callback
+        });
+        
       },
     },
   };
@@ -223,9 +245,5 @@ div.plan-event-finish-text {
   color: #9B9B9B;
 }
 
-@media (min-width: 800px) {
-  .save {
-    display: inline;
-  }
-}
+
 </style>

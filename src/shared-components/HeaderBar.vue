@@ -3,14 +3,19 @@
  <header class="create-event-header">
           <div class="left">
             <span class="logo-image">
-                <a href="left-logo">
-                    <img src="tee.jpg" alt="letter T">
+                <a class="left-logo" href="">
+                    <img src="/static/img/tee.jpg" alt="letter T">
                 </a>
               </span>
               <span class="plan_event_header">{{page.title}}</span>
           </div>
           <div class="right">
-            <span class="save">Save<i class="fa fa-chevron-down"></i></span>
+          <template v-if="page.createEventButton">
+          	<a href="" @click.end="startEventCreation">Create An Event</a>
+          	</template>
+          	<template v-else>
+            <a class="save">Save<i class="fa fa-chevron-down"></i></a>
+            </template>
             <i class="fa fa-bell-o right-header-bell" aria-hidden="true"></i>
             <i class="fa fa-ellipsis-h"></i>
             <div class="member-img-create"><img :src="user.img" alt="Shocked face"></div>
@@ -38,9 +43,9 @@ export default {
       // },
     },
     methods: {
-      // toggleSidenav() {
-      //   this.$refs.sidenav.toggle();
-      // },
+      startEventCreation() {
+        this.$router.push({ path: '/eventcreate' });
+      },
     },
   };
 </script>
@@ -55,9 +60,12 @@ i.fa-chevron-down {
   margin-left: 10px;
 }
 
+.fa{
+	margin-right: 10px;
+}
 div.member-img-create {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 div.member-img-create img {
