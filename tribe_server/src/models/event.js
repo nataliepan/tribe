@@ -6,7 +6,9 @@ const eventSchema = new Schema({
 
         name : {type : String},
         description : {type : String},
-         dateRange : [{type : String}],
+         date : [{type : String}],
+         img : {type : String},
+         starttime : [{type : String}],
         // startDate : {type : String},
         //  endDate: {type : String},
            sessions : [{type : String}],

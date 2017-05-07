@@ -34,7 +34,8 @@
     <div class="main-content">
     <section class="main-body">
     <div class="eventPreviews">
-    <article v-for="event in events" class="eventPreview-wrapper">
+
+    <article v-for="event in viewer.sessions" class="eventPreview-wrapper">
      <EventPreview :event="event"></EventPreview>
     </article>
    </div>
@@ -49,9 +50,38 @@
 </div>
 </template>
 
+
+
+
+
+
+
 <script type="text/babel">
 import EventPreview from '../../shared-components/EventPreview';
 import HeaderBar from '../../shared-components/HeaderBar';
+import gql from 'graphql-tag'; // for apollo
+
+
+// GraphQL query
+const postsQuery = gql`
+  query allPosts {
+    viewer {
+      sessions {
+            name,
+             description,
+              date,
+                addressLine1,
+                  city,
+                   state,
+                    img
+
+
+      }
+    }
+  }
+`;
+
+
 
 export default {
     name: 'GenericDashBoard',
@@ -59,6 +89,8 @@ export default {
       EventPreview,
       HeaderBar
     },
+
+
     data() {
 
       return {
@@ -66,7 +98,7 @@ export default {
           title:'Schedule An Event',
           createEventButton: true,
         },
-        events: [{
+     events: [{
           name: 'Angel Hack SF',
           date: 'May 10',
           city: 'San Francisco',
@@ -92,13 +124,41 @@ export default {
           description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
           img: '/static/img/shock.jpg',
           starttime: '2:30PM',
-        }]
+    }]
+
+
+
+
       };
     },
+
+    // Apollo GraphQL
+    apollo: {
+      // Local state 'posts' data will be updated
+      // by the GraphQL query result
+      viewer: {
+        // GraphQL query
+        query: postsQuery,
+        // Will update the 'loading' attribute
+        // +1 when a new query is loading
+        // -1 when a query is completed
+        loadingKey: 'loading',
+      },
+    },
+
+
+
+
+
     computed: {
       // pageName() {
       //   return this.$route.name;
       // },
+
+
+
+
+
     },
     methods: {
       // toggleSidenav() {
