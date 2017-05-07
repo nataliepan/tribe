@@ -18,6 +18,8 @@ import vuexStore from './vuex/store';
 import ApolloClient, { createNetworkInterface, addTypename } from 'apollo-client';
 import VueApollo from 'vue-apollo'
 
+import { focus } from 'vue-focus';
+
 // Create the apollo client
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
@@ -28,6 +30,14 @@ const apolloClient = new ApolloClient({
   queryTransformer: addTypename,
   dataIdFromObject: r => r.id,
 });
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+import locale from 'element-ui/lib/locale/lang/en'
+
+//element-ui
+Vue.use(ElementUI, { locale });
+
 
 // // Create the apollo client
 // const apolloClient = new ApolloClient({
