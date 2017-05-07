@@ -1,6 +1,23 @@
 <template lang="html">
 <div class="event_schedule">
-scheule
+<div class="time-strip">
+	<ul>
+	<li>8:00 A</li>	
+	<li>9:00 A</li>
+	<li>10:00 A</li>
+	<li>11:00 A</li>	
+	<li>12:00 A</li>
+	<li>1:00 P</li>
+	<li>2:00 P</li>	
+	<li>3:00 P</li>
+	<li>4:00 P</li>
+	<li>5:00 P</li>	
+	<li>6:00 P</li>
+	<li>7:00 P</li>
+	<li>8:00 P</li>
+	</ul>
+</div>
+
 </div>
 </template>
 
@@ -65,16 +82,17 @@ export default {
         		color: ''
         	},
         	{
-        		title: 'Fundamentals'
+        		title: 'Fundamentals',
         		starttime: '3:00PM',
         		endtime: '4:30PM',
         		color: ''
-        	},
+        	}
         	]
+        }
+        ]
       };
     }, 
    components: {
-      HeaderBar, 
       EventSchedule,
     },
     computed: {
@@ -91,5 +109,8 @@ export default {
 </script>
 
 <style>
-  
+  .time-strip{
+  	width: 100px;
+  	text-align: right;
+  }
 </style>
