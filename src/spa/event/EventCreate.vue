@@ -5,7 +5,7 @@
           <div class="left">
             <span class="logo-image">
                 <a href="left-logo">
-                    <img src="tee.jpg" alt="letter T">
+                    <img src="../../assets/img/tee.jpg" alt="letter T">
                 </a>
               </span>
               <span class="plan_event_header">Create Event</span>
@@ -14,7 +14,7 @@
             <span class="schedule">Save<i class="fa fa-chevron-down"></i></span>
             <i class="fa fa-bell-o right-header-bell" aria-hidden="true"></i>
             <i class="fa fa-ellipsis-h"></i>
-            <div class="member-img-create"><img src="shock.jpg" alt="Shocked face"></div>
+            <div class="member-img-create"><img src="../../assets/img/shock.jpg" alt="Shocked face"></div>
           </div>
         </header>
 
@@ -44,6 +44,10 @@
                         <label for="start-time">End Date</label>
                         <input type="time" name="end-time" id="end-time">
                     </div>
+                    <div class="all-day-checkbox">
+                        <label for="all-day-checkbox">All Day</label>
+                        <input type="checkbox" name="all-day-checkbox" id="all-day-checkbox">
+                    </div>
                 </div>
                 <div class="event-location event-time-section">
                     <label for="event-location">Location Address</label>
@@ -68,7 +72,7 @@
 </script>
 
 <style>
-  span.plan_event_header {
+span.plan_event_header {
   margin-left: 20px;
   font-size: 21px;
 }
@@ -98,6 +102,7 @@ section.event-time-location {
   border-bottom: 1px solid #D8D8D8;
   width: 90%;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 input#event-name,
@@ -141,8 +146,14 @@ textarea {
 }
 
 div.start,
-div.end {
+div.end,
+div.all-day-checkbox {
   display: inline-block;
+}
+
+div.start,
+div.end {
+  min-width: 170px;
 }
 
 input#event-location,
@@ -161,7 +172,7 @@ div.plan-event-finish-text {
 
 .plan-event-finish-text {
   color: #4990E2;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .schedule-btn {
@@ -170,5 +181,12 @@ div.plan-event-finish-text {
 
 .schedule-btn button {
   border: 2px solid #9B9B9B;
+  border-radius: 100px;
+  width: 220px;
+  height: 60px;
+  background-color: white;
+  font-size: 21px;
+  color: #9B9B9B;
+
 }
 </style>
