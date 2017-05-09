@@ -7,13 +7,13 @@
 	        <div class="event-body">
 	        <div class="event-header">
 	          <span class="event-header-img"></span>
-	       
+
 	        </div>
 
 	        <div class="event-blurb">
 	         <div class="event-date">{{event.date}} {{event.starttime}}</div>
 	          <h3 class="event-title">{{event.name}}</h3>
-	         
+
 	         <!--  <div class="event-header-company">{{event.name}}</div> -->
 	          <!-- <div class="event-description">{{event.description}}</div> -->
 	        </div>
@@ -28,7 +28,7 @@
   <path d="M422.953,176.019c0.549-0.48,1.09-0.975,1.612-1.498l21.772-21.772c12.883-12.883,12.883-33.771,0-46.654
     l-40.434-40.434c-12.883-12.883-33.771-12.883-46.653,0l-21.772,21.772c-0.523,0.523-1.018,1.064-1.498,1.613L422.953,176.019z"/>
   <polygon points="114.317,397.684 157.317,440.684 106.658,448.342 56,456 63.658,405.341 71.316,354.683  "/>
-  <polygon points="349.143,125.535 118.982,355.694 106.541,343.253 336.701,113.094 324.26,100.653 81.659,343.253 
+  <polygon points="349.143,125.535 118.982,355.694 106.541,343.253 336.701,113.094 324.26,100.653 81.659,343.253
     168.747,430.341 411.348,187.74  "/>
 </g>
 </svg>
@@ -104,7 +104,8 @@ export default {
 .eventPreview {
  /* margin: 0 auto;
   width: 95%;*/
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04); 
+min-width:300px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   border: 1px solid rgba(0,0,0,0.09);
 }
 

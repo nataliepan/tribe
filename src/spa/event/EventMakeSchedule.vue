@@ -6,7 +6,7 @@
 <div class="flex">
         <section class="add-sessions-venue-type">
             <div class="add-session-button add-sessions-venue-type-section">
-                <button class="add-session">Add Session</button>
+                <button class="add-session" @click="make">Add Session</button>
             </div>
             <div class="event-dates add-sessions-venue-type-section">
                 <span class="event-dates-title">Event Dates</span>
@@ -36,7 +36,7 @@
         </section>
 
 
-        <EventSchedule></EventSchedule>
+        <EventSchedule  :makesession="makesession"></EventSchedule>
 </div>
 <EventSessionEdit></EventSessionEdit>
     </div>
@@ -54,18 +54,19 @@ export default {
       return {
         page: {
           title: 'Scheduling'
-        }
+        },
+        makesession: 'false'
       };
-    }, 
+    },
    components: {
-      HeaderBar, 
+      HeaderBar,
       EventSchedule,
       EventSessionEdit
     },
     computed: {
-      // pageName() {
-      //   return this.$route.name;
-      // },
+     make() {
+      this.makesession = 'true';
+       },
     },
     methods: {
       // toggleSidenav() {

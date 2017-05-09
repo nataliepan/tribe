@@ -34,6 +34,7 @@
     <div class="main-content">
     <section class="main-body">
     <div class="eventPreviews">
+
     <article v-for="event in events" class="eventPreview-wrapper">
      <EventPreview :event="event"></EventPreview>
     </article>
@@ -49,9 +50,38 @@
 </div>
 </template>
 
+
+
+
+
+
+
 <script type="text/babel">
 import EventPreview from '../../shared-components/EventPreview';
 import HeaderBar from '../../shared-components/HeaderBar';
+import gql from 'graphql-tag'; // for apollo
+
+
+// GraphQL query
+const postsQuery = gql`
+  query allPosts {
+    viewer {
+      sessions {
+            name,
+             description,
+              date,
+                addressLine1,
+                  city,
+                   state,
+                    img
+
+
+      }
+    }
+  }
+`;
+
+
 
 export default {
     name: 'GenericDashBoard',
@@ -59,6 +89,8 @@ export default {
       EventPreview,
       HeaderBar
     },
+
+
     data() {
 
       return {
@@ -66,7 +98,7 @@ export default {
           title:'Schedule An Event',
           createEventButton: true,
         },
-        events: [{
+     events: [{
           name: 'Angel Hack SF',
           date: 'May 10',
           city: 'San Francisco',
@@ -92,13 +124,141 @@ export default {
           description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
           img: '/static/img/shock.jpg',
           starttime: '2:30PM',
-        }]
+
+
+    }, {
+      name: 'Road Trip',
+      date: 'May 12',
+      city: 'San Francisco',
+      state: 'California',
+      description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+      img: '/static/img/1.png',
+      starttime: '5:30PM',
+
+
+},
+{
+  name: 'Anger Management',
+  date: 'May 12',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/2.jpg',
+  starttime: '8:30PM',
+
+
+},
+
+{
+  name: 'Know how to Dress Your Man ',
+  date: 'May 14',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/3.jpg',
+  starttime: '2:30PM',
+
+
+},
+{
+  name: 'Becoma a poker expert ',
+  date: 'May 17',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/4.jpg',
+  starttime: '12:30PM',
+
+
+},
+{
+  name: 'Neighbor Hood Social ',
+  date: 'May 15',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/5.png',
+  starttime: '2:30PM',
+
+
+},
+{
+  name: 'Chocolate Foundation ',
+  date: 'May 14',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/6.png',
+  starttime: '5:30PM',
+
+
+},
+
+{
+  name: 'Riot Club',
+  date: 'May 14',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/7.png',
+  starttime: '2:30PM',
+
+
+},
+{
+  name: 'Coachella ',
+  date: 'May 11',
+  city: 'San Francisco',
+  state: 'California',
+  description: 'Get involved with the best teams from AngelHack\'s Global Series as they go through our pre-accelerator',
+  img: '/static/img/8.png',
+  starttime: '2:30PM',
+
+
+}
+
+
+
+
+
+
+
+
+    ]
+
+
+
+
       };
     },
+
+    // Apollo GraphQL
+    apollo: {
+      // Local state 'posts' data will be updated
+      // by the GraphQL query result
+      viewer: {
+        // GraphQL query
+        query: postsQuery,
+        // Will update the 'loading' attribute
+        // +1 when a new query is loading
+        // -1 when a query is completed
+        loadingKey: 'loading',
+      },
+    },
+
+
+
+
+
     computed: {
       // pageName() {
       //   return this.$route.name;
       // },
+
+
+
+
+
     },
     methods: {
       // toggleSidenav() {
@@ -198,6 +358,7 @@ li a {
 .eventPreviews{
   display: -webkit-flex;
     display: flex;
+    flex-wrap:wrap;
     margin: 0 -10px 0;
 }
 

@@ -113,7 +113,8 @@ import HeaderBar from '../../shared-components/HeaderBar';
             tags :[],
              addressLine1 :'',
               city : '',
-               state : ''
+               state : '',
+               img : ''
       };
     },
 
@@ -153,13 +154,14 @@ import HeaderBar from '../../shared-components/HeaderBar';
         var data = {
 
         name : this.name,
-         dateRange: this.dateRange,
+         date: this.dateRange,
          description : this.description,
            sessions : this.sessions,
             tags :this.tags,
              addressLine1 :this.addressLine1,
               city : this.city,
-               state : this.state
+               state : this.state,
+                img : '/static/img/elon_musk.png'
 
         }
 

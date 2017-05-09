@@ -4,7 +4,13 @@
           <div class="left">
             <span class="logo-image">
                 <a class="left-logo" href="">
-                    <img src="/static/img/tee.jpg" alt="letter T">
+                    <svg width="72px" height="73px" viewBox="0 0 72 73" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Artboard-2" stroke-width="11" stroke="#4990E2" fill="#50E3C2">
+                                <polygon id="Triangle" points="36 13 63 67 9 67"></polygon>
+                            </g>
+                        </g>
+                    </svg>
                 </a>
               </span>
               <span class="plan_event_header">{{page.title}}</span>
